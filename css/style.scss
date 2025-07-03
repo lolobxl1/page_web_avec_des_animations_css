@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+:root {
+    --main-color: #9356DC;
+    --sec-color: #FF79DA;
+    --third-color: #99E2D0;
+}
+
 body {
   font-family: Roboto, sans-serif;
   font-size: 16px;
@@ -21,11 +27,11 @@ a {
   width: 50px;
   height: 50px;
   border: 6px solid #ccc;
-  border-top: 6px solid #9356DC;
+  border-top: 6px solid var(--main-color);
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin: 0px auto;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -116,7 +122,7 @@ a {
     color: white;
     text-align: center;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-    background: linear-gradient(0deg, #9356DC, #FF79DA);
+    background: linear-gradient(0deg, var(--main-color), var(--sec-color));
     border-radius: 30px;
     border: none;
     font-size: 16px;
@@ -147,13 +153,16 @@ a {
     flex-direction: column;
     justify-content: space-between;
     gap: 25px;
+    @media (min-width: 1024px) {
+      flex-direction: row;
+    }
   }
 
   &__roundnumber {
     border: none;
     border-radius: 50%;
     padding: 4px 8px;
-    background: #9356DC;
+    background: var(--main-color);
     color: white;
     margin-right: -12px;
     z-index: 1;
@@ -164,10 +173,13 @@ a {
     display: flex;
     flex-direction: row;
     align-items: center;
+    @media (min-width: 1024px) {
+      width: 100%;
+    }
   }
 
   &__list:hover &__icon {
-  color: #9356DC;  // color on hover (example: purple)
+  color: var(--main-color);  // color on hover (example: purple)
   }
 
   &__roundshape {
@@ -212,10 +224,20 @@ a {
   flex-direction: column;
   gap: 18px;
 
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 50px 100px;
+  }
+
   &__link {
     background-color: white;
     border-radius: 20px;
     position: relative;
+    @media (min-width: 1024px) {
+      width: calc(50% - 50px);
+    }
   }
 
   &__img {
@@ -227,7 +249,7 @@ a {
   }
 
   &__badge {
-    background-color: #99e2d0;
+    background-color: var(--third-color);
     color: #008766;
     border-radius: 3px;
     padding: 6px 12px;
@@ -288,7 +310,7 @@ a {
 
   &__icon--heart:hover {
       font-size: 1.5rem;  /* or whatever size you want */
-      background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+      background: linear-gradient(193.33deg, var(--main-color) -11.44%, var(--sec-color) 123.93%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text; /* for Firefox */
@@ -302,6 +324,12 @@ a {
   background-color: #353535;
   color: white;
   padding: 25px 22px 25px 22px;
+    @media (min-width: 1024px) {
+      display: flex;
+      flex-direction: row-reverse;
+      padding-top: 40px;
+      padding-right: 80px;
+    }
 
   &__title {
     font-family: Shrikhand;
@@ -310,6 +338,7 @@ a {
     font-size: 18px;
     line-height: 100%;
     margin-bottom: 16px;
+    margin-left: 60px;
   }
 
   &__menu {
@@ -318,8 +347,17 @@ a {
       display: flex;
       flex-direction: column;
       gap: 7px;
+    @media (min-width: 1024px) {
+      flex-direction: row;
+      justify-content: right;
+      gap: 20px;
+    }
     }
   }
 }
 
+.container {
+  margin: auto;
+  max-width: 1440px;
+}
 
