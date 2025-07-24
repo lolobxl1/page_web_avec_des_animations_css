@@ -73,11 +73,11 @@ a {
   height: 63px;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
   background-color: #ffffff;
+  align-items: center;
 
   &__img {
     width: 197px;
     height: 37px;
-    margin-top: 14px;
   }
 
 }
@@ -89,7 +89,7 @@ a {
   height: 50px;
   color: #353535;
   background-color: #EAEAEA;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
 
   &__title {
     margin-left: 17px;
@@ -117,7 +117,8 @@ a {
   }
 
   &__button {
-    width: 218px;
+    padding-left: 20px;
+    padding-right: 20px;
     height: 50px;
     color: white;
     text-align: center;
@@ -128,12 +129,12 @@ a {
     font-size: 16px;
     font-weight: 500;
     padding-top: 15px;
-    transition: background 0.3s ease;
+    transition: all 0.4s ease;
   }
 
   &__button:hover {
     filter: brightness(1.1);
-    box-shadow: 0px 4px 8px 5px rgba(0,0,0,.1);
+    box-shadow: 0px 4px 8px 5px rgba(0,0,0,.25);
   }
 }
 
@@ -191,11 +192,13 @@ a {
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
     border-radius: 20px;
     width: 100%;
+    cursor: pointer;
+    transition: all 0.4s ease;
   }
 
   &__roundshape:hover {
-    filter: brightness(1.1);
-    cursor: pointer;
+    filter: brightness(0.97);
+    transform: scale(1.01);
   }
 
   &__icon {
@@ -276,48 +279,44 @@ a {
     font-size: 17px;
     font-weight: 300;
   }
+}
 
-  &__heartwrapper {
-    position: relative;
-    display: inline-block;
-    font-size: 48px;
+.btnheart {
+  position: relative;
+  display: inline-block;
+  font-size: 48px;
+  cursor: pointer;
+
+  i {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 1.5rem;
+    margin-top: 5px;
   }
 
-  &__heartwrapper {
-    i {
-      position: absolute;
-      top: 0;
-      right: 10px;
-    }
-    .fa-heart {
-      font-size: 1.5rem;
-      margin-top: 10px;
-    }
-  }
-
-  &__heartwrapper:hover &__icon--heart {
+  &:hover &__icon--heart {
     opacity: 1;
   }
 
-  &__heartwrapper:hover &__icon {
+  &:hover &__icon {
     opacity: 0;
+  }
+
+  &__icon {
+    transition: opacity 0.6s ease;
   }
 
   &__icon--heart {
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.6s ease;
+    font-size: 1.5rem;  /* or whatever size you want */
+    background: linear-gradient(193.33deg, var(--main-color) -11.44%, var(--sec-color) 123.93%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; /* for Firefox */
+    color: transparent;    /* fallback */
   }
-
-  &__icon--heart:hover {
-      font-size: 1.5rem;  /* or whatever size you want */
-      background: linear-gradient(193.33deg, var(--main-color) -11.44%, var(--sec-color) 123.93%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text; /* for Firefox */
-      color: transparent;    /* fallback */
-      border: 2px;
-
-    }
 }
 
 .footer {
