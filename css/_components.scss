@@ -1,0 +1,88 @@
+.header {
+  margin-bottom: 3px;
+  display: flex;
+  justify-content: center;
+  height: 63px;
+  background-color: #ffffff;
+  align-items: center;
+
+  &__img {
+    width: 197px;
+    height: 37px;
+  }
+
+}
+
+.footer {
+  background-color: #353535;
+  color: white;
+  padding: 25px 22px 25px 22px;
+    @media (min-width: 1024px) {
+      display: flex;
+      flex-direction: row-reverse;
+      padding-top: 40px;
+      padding-right: 80px;
+    }
+
+  &__title {
+    font-family: Shrikhand;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 100%;
+    margin-bottom: 16px;
+    margin-left: 60px;
+  }
+
+  &__menu {
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    @media (min-width: 1024px) {
+      flex-direction: row;
+      justify-content: right;
+      gap: 20px;
+    }
+    }
+  }
+}
+
+.btnheart {
+  position: relative;
+  display: inline-block;
+  font-size: 48px;
+  cursor: pointer;
+
+  i {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 1.5rem;
+    margin-top: 5px;
+  }
+
+  &:hover &__icon--heart {
+    opacity: 1;
+  }
+
+  &:hover &__icon {
+    opacity: 0;
+  }
+
+  &__icon {
+    transition: opacity 0.6s ease;
+  }
+
+  &__icon--heart {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    font-size: 1.5rem;  /* or whatever size you want */
+    background: linear-gradient(193.33deg, var(--main-color) -11.44%, var(--sec-color) 123.93%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; /* for Firefox */
+    color: transparent;    /* fallback */
+  }
+}
