@@ -27,7 +27,7 @@
 }
 
 /* Main container starts hidden */
-.main-container {
+.custom-loader + .main-container {
   opacity: 0;
   visibility: hidden;
   animation: showMain 1s forwards;

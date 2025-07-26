@@ -160,7 +160,7 @@ a {
   }
 }
 /* Main container starts hidden */
-.main-container {
+.custom-loader + .main-container {
   opacity: 0;
   visibility: hidden;
   animation: showMain 1s forwards;
@@ -467,7 +467,7 @@ a {
   border-radius: 15px;
   padding: 12px 22px 12px 10px;
   margin-bottom: 14px;
-  animation: menu-list 1s ease both;
+  animation: menu-list 0.4s ease both;
   animation-delay: 0.2s;
   overflow: hidden;
 }

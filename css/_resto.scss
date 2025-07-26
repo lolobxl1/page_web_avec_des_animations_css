@@ -65,6 +65,10 @@
   }
 }
 
+@mixin list-delay($i: 0) {
+  animation-delay: 0.2s;
+}
+
 @keyframes menu-list {
   0% {
     opacity: 0;
@@ -74,10 +78,6 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-@mixin list-delay($i: 0) {
-  animation-delay: 0.2s;
 }
 
 .entrees .plat:nth-child(1) { animation-delay: 0.1s; }
@@ -104,7 +104,7 @@
     border-radius: 15px;
     padding: 12px 22px 12px 10px;
     margin-bottom: 14px;
-    animation: menu-list 1s ease both;
+    animation: menu-list 0.4s ease both;
     @include list-delay;
     overflow: hidden;
 
